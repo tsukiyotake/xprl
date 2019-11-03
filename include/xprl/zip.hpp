@@ -27,8 +27,7 @@ namespace xprl {
 
             template<size_t ... index>
             constexpr auto reference_impl(std::index_sequence<index...> const&)const noexcept {
-                return std::tuple<std::add_const_t<(*iterators_[index])>...>(*std::get<index>(iterators_)...);
-
+                return std::tuple<decltype(*std::get<index>(iterators_))>...>(*std::get<index>(iterators_)...);
             }
 
         public:
