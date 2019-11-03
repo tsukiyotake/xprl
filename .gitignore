@@ -1,0 +1,5 @@
+# build files
+tests/build/
+
+# editor config
+.vscode/
